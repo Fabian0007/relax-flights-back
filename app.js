@@ -49,7 +49,12 @@ tickets.route('/tickets/:id')
 
 tickets.route('/tickets/:id/:client')
     .put(ticketController.buyTicket);
-//   .delete(controller.deleteBook);
+
+tickets.route('/tickets-information/:client')
+    .get(ticketController.findLastTicket);
+
+tickets.route('/yourtickets/:client')
+    .get(ticketController.findTickets);
 
 app.use('/api', tickets);
 

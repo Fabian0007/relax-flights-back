@@ -44,7 +44,6 @@ exports.findAllFlights = function (req, res) {
 //GET - Return a specific flight
 exports.findFlightById = function (req, res) {
     'use strict';
-    console.log(res);
     FlightsModel.findById(req.params.id, function (err, flight) {
         if (err) {
             return res.send(500, err.message);
