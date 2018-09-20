@@ -69,11 +69,10 @@ exports.addTicket = function (req, res) {
 //GET - Return all tickets of a specific flight and and that haven't been purchased (client = "")
 exports.findByIdFlight = function (req, res) {
     'use strict';
-    TicketsModel.find({flight: req.params.id, client: ""}, function (err, tickets) {
+    TicketsModel.find({flight: req.params.id, client: ""}).populate('flight').exec(function (err, tickets) {
         if (err) {
             return res.send(500, err.message);
         }
-        console.log('GET /tickets/' + req.params.id);
         res.status(200).jsonp(tickets);
     });
 };
