@@ -9,7 +9,7 @@
     "cors": "^2.1.6",
     "express": "^4.7.1",
     "method-override": "^2.1.2",
-    "mongodb": "^2.1.6",
+    "mongodb": "^3.6.1",
     "mongoose": "^4.1.9"
   }
 }
